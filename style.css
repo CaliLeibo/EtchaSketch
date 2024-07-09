@@ -1,0 +1,26 @@
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Buttons style*/
+.canvas, .size {
+    display: flex;
+    padding: 3px;
+}
+
+input {
+    width: 100px;
+    color: gray;
+    margin-right: 3px;
+}
+
+button {
+    margin: 0 3px 0 3px;
+}
