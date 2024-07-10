@@ -1,4 +1,5 @@
 const container = document.querySelector('.sketch-container');
+
 createDefaultGrid();
 
 
@@ -6,19 +7,17 @@ createDefaultGrid();
 
 function createDefaultGrid() {
     
-    container.textContent = ' ';
-    const itemWidth = parseFloat(100/256).toFixed(3);
+    container.textContent = ' ';    
 
-    for (let i = 0; i < 256; i++){
-        const gridBox = document.createElement('div');        
-
-        gridBox.className = 'grid-box';
-        gridBox.textContent = "";
-        gridBox.style.flex = '1 0 ${itemWidth}%';
-        gridBox.style.border = "solid black 1px";
-        gridBox.style.maxWidth = itemWidth;
-        container.appendChild(gridBox);
-
+    for (let i = 0; i < 5; i++){
+        const row = document.createElement('div');
+        row.className = 'grid-row';
+        container.appendChild(row);
+        for (let i = 0; i < 5; i++){
+            const box = document.createElement('div');
+            box.className = 'block';
+            row.appendChild(box);
+        }
 
     }
 }
