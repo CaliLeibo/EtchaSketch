@@ -34,10 +34,17 @@ button {
 /*Etch a sketch container border*/
 .sketch-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 3px solid;
+    border: 10px solid gray;
+    border-radius: 10px;
     width: 500px;
     height: 500px;
-    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.grid-box{
+    box-sizing: border-box;
+    padding: 10px;
 }
