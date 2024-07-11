@@ -7,6 +7,8 @@ const error = document.querySelector('.error');
 const blackButton = document.querySelector('.black-btn');
 const eraseButton = document.querySelector('.erase-btn');
 const clearAll = document.querySelector('.clear-all');
+let black = true;
+let erase = false;
 
 document.addEventListener("DOMContentLoaded", function (){
     currSize.textContent = `16 x 16`;
@@ -27,11 +29,31 @@ size.addEventListener('click', function(){
     }
 });
 
+blackButton.addEventListener('click', function() {
+    if (!black){
+        black = true;
+        erase = false;
+    }
+    else if (black) {
+        black = false;
+    }
+});
 
-
+eraseButton.addEventListener('click', function() {
+    if (!erase){
+        erase = true;
+        black = false;
+    }
+    else if (erase) {
+        erase = false;
+        
+    }
+});
 function createGrid(grid) {
     
-    container.textContent = ' ';    
+    container.textContent = ' ';
+
+
     for (let i = 0; i < grid; i++){
         const row = document.createElement('div');
         row.className = 'grid-row';
@@ -39,14 +61,19 @@ function createGrid(grid) {
         for (let i = 0; i < grid; i++){
             const box = document.createElement('div');
             box.className = 'block';
+
+            box.addEventListener('mouseover', (event) => {
+                if (event.buttons === 1 && black){
+                    box.style.background = 'black';
+                }
+                else if (event.buttons === 1 && erase){
+                    box.style.background = 'lightgray';
+                }
+            })
+
             row.appendChild(box);
         }
     }
 
 }
 
-
-function changeColor() {
-    let color = document.querySelector('.block');
-    color.style.background = "black";
-}
