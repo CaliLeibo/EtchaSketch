@@ -46,9 +46,11 @@ eraseButton.addEventListener('click', function() {
     }
     else if (erase) {
         erase = false;
-        
     }
 });
+
+
+
 function createGrid(grid) {
     
     container.textContent = ' ';
@@ -71,9 +73,17 @@ function createGrid(grid) {
                 }
             })
 
+            clearAll.addEventListener('click',function (){
+                for (let i = 0; i < box.length; i++){
+                    box[i].style.background = 'lightgray';
+                }
+            });
+
             row.appendChild(box);
         }
     }
 
 }
+
+
 
