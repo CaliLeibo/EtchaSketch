@@ -41,7 +41,7 @@ button {
     box-sizing: border-box;
 }
 
-.grid-row {
+.grid-col {
     display: flex;
     flex-direction: column;
     width: 500px;

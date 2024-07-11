@@ -9,14 +9,14 @@ function createDefaultGrid() {
     
     container.textContent = ' ';    
 
-    for (let i = 0; i < 5; i++){
-        const row = document.createElement('div');
-        row.className = 'grid-row';
-        container.appendChild(row);
-        for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 16; i++){
+        const col = document.createElement('div');
+        col.className = 'grid-col';
+        container.appendChild(col);
+        for (let i = 0; i < 16; i++){
             const box = document.createElement('div');
             box.className = 'block';
-            row.appendChild(box);
+            col.appendChild(box);
         }
 
     }
