@@ -5,9 +5,10 @@ const size = document.querySelector('.size-button');
 const currSize = document.querySelector('.curr-size');
 const error = document.querySelector('.error');
 const blackButton = document.querySelector('.black-btn');
+const rnbwButton = document.querySelector('.rnbw-btn');
 const eraseButton = document.querySelector('.erase-btn');
-const clearAll = document.querySelector('.clear-all');
 let black = true;
+let rnbw = false;
 let erase = false;
 
 document.addEventListener("DOMContentLoaded", function (){
@@ -32,9 +33,21 @@ size.addEventListener('click', function(){
 blackButton.addEventListener('click', function() {
     if (!black){
         black = true;
+        rnbw = false;
         erase = false;
     }
     else if (black) {
+        black = false;
+    }
+});
+
+rnbwButton.addEventListener('click', function() {
+    if (!rnbw){
+        black = false;
+        rnbw = true;
+        erase = false;
+    }
+    else if (rnbw) {
         black = false;
     }
 });
@@ -43,6 +56,7 @@ eraseButton.addEventListener('click', function() {
     if (!erase){
         erase = true;
         black = false;
+        rnbw = false;
     }
     else if (erase) {
         erase = false;
@@ -62,11 +76,17 @@ function createGrid(grid) {
             const box = document.createElement('div');
             box.className = 'block';
 
-            box.addEventListener('mouseover', (event) => {
-                if (event.buttons === 1 && black){
+            box.addEventListener('mouseover', () => {
+                if (black){
                     box.style.background = 'black';
                 }
-                else if (event.buttons === 1 && erase){
+                else if (rnbw){
+                    let r = Math.floor(Math.random()*256);
+                    let g = Math.floor(Math.random()*256);
+                    let b = Math.floor(Math.random()*256);
+                    box.style.background = `rgb(${r},${g},${b})`;
+                }
+                else if (erase){
                     box.style.background = 'lightgray';
                 }
             })            
