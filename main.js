@@ -26,6 +26,7 @@ size.addEventListener('click', function(){
     else {
         currSize.textContent = `${gridSize} x ${gridSize}`;
         createGrid(gridSize);
+        error.textContent = '';
         userInput.value = '';
     }
 });
