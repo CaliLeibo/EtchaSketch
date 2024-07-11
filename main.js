@@ -2,16 +2,20 @@ const container = document.querySelector('.sketch-container');
 let userInput = document.querySelector('.user-input');
 let gridSize = parseInt(userInput.value);
 const size = document.querySelector('.size-button');
+const currSize = document.querySelector('.curr-size');
 
 
-document.addEventListener("DOMContentLoaded", createGrid(16));
+document.addEventListener("DOMContentLoaded", function (){
+    currSize.textContent = `16 x 16`;
+    createGrid(16);
+});
 
 size.addEventListener("click", function(){
     userInput = document.querySelector('.user-input');
     gridSize = parseInt(userInput.value);
+    currSize.textContent = `${gridSize} x ${gridSize} Grid`;
     createGrid(gridSize);
     userInput.value = '';
-    console.log('Button Clicked!');
 });
 
 function createGrid(grid) {
