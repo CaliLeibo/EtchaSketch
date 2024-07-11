@@ -23,7 +23,7 @@ size.addEventListener('click', function(){
         userInput.value = '';
     }
     else {
-        currSize.textContent = `${gridSize} x ${gridSize} Grid`;
+        currSize.textContent = `${gridSize} x ${gridSize}`;
         createGrid(gridSize);
         userInput.value = '';
     }
@@ -49,8 +49,6 @@ eraseButton.addEventListener('click', function() {
     }
 });
 
-
-
 function createGrid(grid) {
     
     container.textContent = ' ';
@@ -71,19 +69,11 @@ function createGrid(grid) {
                 else if (event.buttons === 1 && erase){
                     box.style.background = 'lightgray';
                 }
-            })
-
-            clearAll.addEventListener('click',function (){
-                for (let i = 0; i < box.length; i++){
-                    box[i].style.background = 'lightgray';
-                }
-            });
+            })            
 
             row.appendChild(box);
         }
     }
 
 }
-
-
 
