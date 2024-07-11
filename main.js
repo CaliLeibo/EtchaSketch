@@ -10,6 +10,7 @@ size.addEventListener("click", function(){
     userInput = document.querySelector('.user-input');
     gridSize = parseInt(userInput.value);
     createGrid(gridSize);
+    userInput.value = '';
     console.log('Button Clicked!');
 });
 
