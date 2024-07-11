@@ -3,20 +3,31 @@ let userInput = document.querySelector('.user-input');
 let gridSize = parseInt(userInput.value);
 const size = document.querySelector('.size-button');
 const currSize = document.querySelector('.curr-size');
-
+const error = document.querySelector('.error');
+const blackButton = document.querySelector('.black-btn');
+const eraseButton = document.querySelector('.erase-btn');
+const clearAll = document.querySelector('.clear-all');
 
 document.addEventListener("DOMContentLoaded", function (){
     currSize.textContent = `16 x 16`;
     createGrid(16);
 });
 
-size.addEventListener("click", function(){
+size.addEventListener('click', function(){
     userInput = document.querySelector('.user-input');
     gridSize = parseInt(userInput.value);
-    currSize.textContent = `${gridSize} x ${gridSize} Grid`;
-    createGrid(gridSize);
-    userInput.value = '';
+    if (gridSize < 2 || gridSize > 99){
+        error.textContent = 'Please enter a number between 2 and 99!'        
+        userInput.value = '';
+    }
+    else {
+        currSize.textContent = `${gridSize} x ${gridSize} Grid`;
+        createGrid(gridSize);
+        userInput.value = '';
+    }
 });
+
+
 
 function createGrid(grid) {
     
@@ -35,9 +46,7 @@ function createGrid(grid) {
 }
 
 
-
-
-
-console.log(gridSize);
-
-
+function changeColor() {
+    let color = document.querySelector('.block');
+    color.style.background = "black";
+}
