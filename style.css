@@ -44,12 +44,12 @@ button {
 .grid-col {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 100%;
 }
 
 .block {
     display: flex;
-    height: 500px;
+    height: 100%;
     border: solid 1px white;
     background-color: lightgray;
 }
