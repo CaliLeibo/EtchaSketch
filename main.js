@@ -7,9 +7,7 @@ const error = document.querySelector('.error');
 const blackButton = document.querySelector('.black-btn');
 const rnbwButton = document.querySelector('.rnbw-btn');
 const eraseButton = document.querySelector('.erase-btn');
-let black = true;
-let rnbw = false;
-let erase = false;
+let color = 'black';
 
 document.addEventListener("DOMContentLoaded", function (){
     currSize.textContent = `16 x 16`;
@@ -32,36 +30,15 @@ size.addEventListener('click', function(){
 });
 
 blackButton.addEventListener('click', function() {
-    if (!black){
-        black = true;
-        rnbw = false;
-        erase = false;
-    }
-    else if (black) {
-        black = false;
-    }
+    color = 'black';
 });
 
 rnbwButton.addEventListener('click', function() {
-    if (!rnbw){
-        black = false;
-        rnbw = true;
-        erase = false;
-    }
-    else if (rnbw) {
-        black = false;
-    }
+    color = 'rnbw';
 });
 
 eraseButton.addEventListener('click', function() {
-    if (!erase){
-        erase = true;
-        black = false;
-        rnbw = false;
-    }
-    else if (erase) {
-        erase = false;
-    }
+    color = 'none';
 });
 
 function createGrid(grid) {
@@ -78,16 +55,16 @@ function createGrid(grid) {
             box.className = 'block';
 
             box.addEventListener('mouseover', () => {
-                if (black){
+                if (color === "black"){
                     box.style.background = 'black';
                 }
-                else if (rnbw){
+                else if (color === "rnbw"){
                     let r = Math.floor(Math.random()*256);
                     let g = Math.floor(Math.random()*256);
                     let b = Math.floor(Math.random()*256);
                     box.style.background = `rgb(${r},${g},${b})`;
                 }
-                else if (erase){
+                else if (color === "none"){
                     box.style.background = 'lightgray';
                 }
             })            
