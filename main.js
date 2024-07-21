@@ -4,10 +4,10 @@ let gridSize = parseInt(userInput.value);
 const size = document.querySelector('.size-button');
 const currSize = document.querySelector('.curr-size');
 const error = document.querySelector('.error');
-const blackButton = document.querySelector('.black-btn');
-const rnbwButton = document.querySelector('.rnbw-btn');
-const eraseButton = document.querySelector('.erase-btn');
+const buttonList = document.querySelectorAll('button');
 let color = 'black';
+
+console.log(buttonList);
 
 document.addEventListener("DOMContentLoaded", function (){
     currSize.textContent = `16 x 16`;
@@ -29,17 +29,17 @@ size.addEventListener('click', function(){
     }
 });
 
-blackButton.addEventListener('click', function() {
-    color = 'black';
-});
-
-rnbwButton.addEventListener('click', function() {
-    color = 'rnbw';
-});
-
-eraseButton.addEventListener('click', function() {
-    color = 'none';
-});
+buttonList.forEach(button => button.addEventListener('click', function() {
+            if (button.textContent === "Black"){
+                color = 'black';
+            }
+            else if (button.textContent === "Rainbow"){
+                color = 'rnbw';
+            }
+            else if (button.textContent === "Erase"){
+                color = 'none';
+            }
+}));
 
 function createGrid(grid) {
     
