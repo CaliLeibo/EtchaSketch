@@ -32,6 +32,12 @@ buttonList.forEach(button => button.addEventListener('click', function() {
             if (button.textContent === "Black"){
                 color = 'black';
             }
+            else if (button.textContent === "Blue"){
+                color = 'blue';
+            }
+            else if (button.textContent === "Red"){
+                color = 'red';
+            }
             else if (button.textContent === "Rainbow"){
                 color = 'rnbw';
             }
@@ -55,6 +61,12 @@ function createGrid(grid) {
             box.addEventListener('mouseover', () => {
                 if (color === "black"){
                     box.style.background = 'black';
+                }
+                else if (color === "blue"){
+                    box.style.background = 'blue';
+                }
+                else if (color === "red"){
+                    box.style.background = 'red';
                 }
                 else if (color === "rnbw"){
                     let r = Math.floor(Math.random()*256);
