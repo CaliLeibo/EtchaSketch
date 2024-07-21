@@ -58,4 +58,5 @@ button {
     display: flex;
     width: 100%;
     background-color: lightgray;
+    border-radius: 3px;
 }
