@@ -5,9 +5,8 @@ const size = document.querySelector('.size-button');
 const currSize = document.querySelector('.curr-size');
 const error = document.querySelector('.error');
 const buttonList = document.querySelectorAll('button');
+const clear = document.querySelector('.clear-btn');
 let color = 'black';
-
-console.log(buttonList);
 
 document.addEventListener("DOMContentLoaded", function (){
     currSize.textContent = `16 x 16`;
@@ -45,7 +44,6 @@ function createGrid(grid) {
     
     container.textContent = ' ';
 
-
     for (let i = 0; i < grid; i++){
         const row = document.createElement('div');
         row.className = 'grid-row';
@@ -67,11 +65,18 @@ function createGrid(grid) {
                 else if (color === "none"){
                     box.style.background = 'lightgray';
                 }
-            })            
+            })
+
+            
 
             row.appendChild(box);
         }
     }
+    const boxes = document.querySelectorAll('.block');
+    console.log(boxes);
+    boxes.forEach(box => clear.addEventListener('click', function(){
+        box.style.background = 'lightgray';
+    }));
 
 }
 
