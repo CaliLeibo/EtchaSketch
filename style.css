@@ -30,12 +30,17 @@ body {
 
 input {
     width: 100px;
-    color: gray;
+    color: black;
     margin-right: 3px;
 }
 
 button {
     margin: 0 3px 0 3px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
 }
 
 /*Etch a sketch container border*/
@@ -59,4 +64,72 @@ button {
     width: 100%;
     background-color: lightgray;
     border-radius: 3px;
+}
+
+button.black-btn {
+    border: solid black 3px;
+}
+
+button.black-btn:active {
+    border: solid black 3px;
+    background-color: gray;
+}
+
+button.blue-btn {
+    border: solid blue 3px;
+    color: blue;
+}
+
+button.blue-btn:active {
+    border: solid blue 3px;
+    color: blue;
+    background-color: gray;
+}
+
+button.red-btn {
+    border: solid red 3px;
+    color: red;
+}
+
+button.red-btn:active {
+    border: solid red 3px;
+    color: red;
+    background-color: gray;
+}
+
+button.rnbw-btn {
+  border: 3px solid black;
+}
+
+button.rnbw-btn:active {
+    border: solid black 3px;
+    background-color: gray;
+    
+}
+
+button.erase-btn {
+    border: solid black 3px;
+}
+
+button.erase-btn:active {
+    border: solid black 3px;
+    background-color: gray;
+}
+
+button.clear-btn {
+    border: solid black 3px;
+}
+
+button.clear-btn:active {
+    border: solid black 3px;    
+    background-color: gray;
+}
+
+.size-button {
+    border: solid black 3px;
+}
+
+.size-button:active {
+    border: solid black 3px;
+    background-color: gray;
 }

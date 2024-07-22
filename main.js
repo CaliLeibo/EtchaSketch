@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function (){
 size.addEventListener('click', function(){
     userInput = document.querySelector('.user-input');
     gridSize = parseInt(userInput.value);
-    if (gridSize < 2 || gridSize > 99){
-        error.textContent = 'Please enter a number between 2 and 99!'        
+    if (gridSize < 2 || gridSize > 100){
+        error.textContent = 'Please enter a number between 2 and 100!'        
         userInput.value = '';
     }
     else {
@@ -26,6 +26,7 @@ size.addEventListener('click', function(){
         error.textContent = '';
         userInput.value = '';
     }
+    
 });
 
 buttonList.forEach(button => button.addEventListener('click', function() {
