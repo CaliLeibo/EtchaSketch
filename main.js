@@ -25,8 +25,7 @@ size.addEventListener('click', function(){
         createGrid(gridSize);
         error.textContent = '';
         userInput.value = '';
-    }
-    
+    }    
 });
 
 buttonList.forEach(button => button.addEventListener('click', function() {
@@ -79,12 +78,10 @@ function createGrid(grid) {
                     box.style.background = 'lightgray';
                 }
             })
-
-            
-
             row.appendChild(box);
         }
     }
+
     const boxes = document.querySelectorAll('.block');
     console.log(boxes);
     boxes.forEach(box => clear.addEventListener('click', function(){
