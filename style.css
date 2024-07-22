@@ -13,7 +13,7 @@ body {
 }
 
 .curr-size {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
 }
 
@@ -25,6 +25,7 @@ body {
 
 .error {
     color: red;
+    font-family: 'Arial', sans-serif;
     font-style: italic;
     font-size: 15px;
 }
