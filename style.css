@@ -103,8 +103,7 @@ button.rnbw-btn {
 
 button.rnbw-btn:active {
     border: solid gray 3px;
-    background-color: gray;
-    
+    background-color: gray;    
 }
 
 button.erase-btn {
