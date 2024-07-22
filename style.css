@@ -98,30 +98,30 @@ button.red-btn:active {
 }
 
 button.rnbw-btn {
-  border: 3px solid black;
+    border: 3px solid white;
 }
 
 button.rnbw-btn:active {
-    border: solid black 3px;
+    border: solid gray 3px;
     background-color: gray;
     
 }
 
 button.erase-btn {
-    border: solid black 3px;
+    border: solid white 3px;
 }
 
 button.erase-btn:active {
-    border: solid black 3px;
+    border: solid gray 3px;
     background-color: gray;
 }
 
 button.clear-btn {
-    border: solid black 3px;
+    border: solid white 3px;
 }
 
 button.clear-btn:active {
-    border: solid black 3px;    
+    border: solid gray 3px;
     background-color: gray;
 }
 
